@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<konferencia>
+    <cim>Vilagvege fanatikusok, 3. generacio</cim> 
+    <hallgatok>
+        <hallgato>
+		<nev>Simply Jani</nev>
+		<lakcim>Vilag vege utan 2-vel, Hungary</lakcim>
+    </hallgatok>
+    <helyszin>Vilag vege utan 3-mal, Hungary</helyszin>
+    <eloado> 
+		<nev>Complicated Oscar</nev> 
+		<adoszam>0123456789</adoszam> 
+		<lakcim>Vilag kozepe, USA</lakcim>
+	</eloado>
+    <datum>Vilag vege elott 1 hettel, aka 30/09/2021</datum>
+</konferencia>
