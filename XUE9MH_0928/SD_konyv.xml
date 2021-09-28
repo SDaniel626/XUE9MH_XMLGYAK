@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE konyvek SYSTEM "SD_konyv.dtd">
+<konyvek>
+	<konyv kod="x01">
+		<cim>Cim1</cim>
+		<kiadasi_ev>1.2.1234.</kiadasi_ev>
+		<kiado>Emberiseg</kiado>
+		<szerzo>Szerzo1</szerzo>
+		<szerzo>Szerzo2</szerzo>
+		<absztrakt>Emberek velemenye az urlenyekrol</absztrakt>
+	</konyv>
+	<konyv kod="x02">
+		<cim>Cim2</cim>
+		<kiadasi_ev>2.3.2013.</kiadasi_ev>
+		<kiado>Emberiseg</kiado>
+		<szerzo>Szerzo2</szerzo>
+	</konyv>
+	<konyv kod="x03">
+		<cim>Cim3</cim>
+		<kiadasi_ev>30.02.5000.</kiadasi_ev>
+		<kiado>Urleny kiado</kiado>
+		<szerzo>ET</szerzo>
+	</konyv>
+</konyvek>
