@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE adatbazis [
+	<!ELEMENT adatbazis (dolgozo+)>
+	<!ELEMENT dolgozo EMPTY>
+	<!ATTLIST dolgozo id ID #REQUIRED>
+	<!ATTLIST dolgozo nev CDATA #REQUIRED>
+	<!ATTLIST dolgozo fizetes CDATA #REQUIRED>
+]>
+
+<adatbazis>
+	<dolgozo id="d01" nev="Sanyi" fizetes="150000"/>
+	<dolgozo id="d02" nev="Bence" fizetes="350000"/>
+</adatbazis>

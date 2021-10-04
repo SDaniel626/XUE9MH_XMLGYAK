@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE model SYSTEM "SD_ertodtd.DTD">
+
+<model> 
+	<A Aa="a01">
+		<Ab>
+			<Abx>
+			valami
+			</Abx>
+			<Aby>
+			valamimas
+			</Aby>
+		</Ab>
+		<Ac>
+			<Acd>
+			Sanyi
+			</Acd>
+			<Ace>
+			Bond
+			</Ace>
+		</Ac>
+	</A>
+	<B Ba="b01" Bc="b01">
+		<Bb>
+			<Bbx>
+			semmi
+			</Bbx>
+			<Bby>
+			semmiAzEgegyadtaVilagon
+			</Bby>
+		</Bb>
+	</B>
+	<C Ca="c01">
+		<Cb>
+		megmindigsemmi
+		</Cb>
+	</C>
+	<A_B A_B_a="a01" A_B_b="b01">
+		<A_Bc>
+		vegrevege
+		</A_Bc>
+	</A_B>
+</model>

@@ -34,7 +34,7 @@
 		<oktato>Dr. Dudás László</oktato>
 		<szak>Mernök info.</szak>
 	</ora>
-	<ora kod="x01" tipus="gyakorlat">
+	<ora kod="x11" tipus="gyakorlat">
 		<targy>WEB-es alkalmazasok (JAVA)</targy>
 		<idopont>
 			<nap>Kedd</nap>
@@ -56,7 +56,7 @@
 	<oktato>Dr. Bendarik László</oktato>
 	<szak>Mernök info.</szak>
 	</ora>
-	<ora kod="x04" tipus="gyakorlat">
+	<ora kod="x14" tipus="gyakorlat">
 	<targy>Adatkezelés XML-ben</targy>
 	<idopont>
 		<nap>Kedd</nap>
@@ -67,7 +67,7 @@
 	<oktato>Dr. Bendarik László</oktato>
 	<szak>Mernök info.</szak>
 </ora>
-	<ora kod="x02" tipus="gyakorlat">
+	<ora kod="x12" tipus="gyakorlat">
 		<targy>WEB technológiák 1</targy>
 		<idopont>
 			<nap>Kedd</nap>
@@ -78,7 +78,7 @@
 		<oktato>Agárdi Anita</oktato>
 		<szak>Mernök info.</szak>
 	</ora>
-	<ora kod="x03" tipus="gyakorlat">
+	<ora kod="x13" tipus="gyakorlat">
 		<targy>Mesterseges inteligencia alapjai</targy>
 		<idopont>
 			<nap>Kedd</nap>
@@ -89,7 +89,7 @@
 		<oktato>Dr. Dudás László</oktato>
 		<szak>Mernök info.</szak>
 	</ora>
-	<ora kod="x05" tipus="gyakorlat">
+	<ora kod="x15" tipus="gyakorlat">
 		<targy>Szoftvertesztelés</targy>
 		<idopont>
 			<nap>Szerda</nap>

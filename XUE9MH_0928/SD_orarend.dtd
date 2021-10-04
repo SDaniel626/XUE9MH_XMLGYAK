@@ -8,5 +8,5 @@
 <!ELEMENT helyszin (#PCDATA)>
 <!ELEMENT oktato (#PCDATA)>
 <!ELEMENT szak (#PCDATA)>
-<!ATTLIST ora kod IDREF #REQUIRED>
+<!ATTLIST ora kod ID #REQUIRED>
 <!ATTLIST ora tipus CDATA #REQUIRED>
