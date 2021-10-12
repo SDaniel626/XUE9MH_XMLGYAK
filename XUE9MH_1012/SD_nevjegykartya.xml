@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nevjegykartyak xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SD_nevjegykartya.xsd">
+	<nevjegykartya id="1">
+		<nev>Simon Dániel</nev>
+		<ceg>
+			<nev>Miskolci Egyetem</nev>
+			<cim>
+				<iranyitoszam>3515</iranyitoszam>
+				<varos>Miskolc</varos>
+				<utca>Egyetemváros</utca>
+				<hazszam>0123456789</hazszam>
+			</cim>
+			<telefonszam>+36 46 565 111</telefonszam>
+			<weblap>http://www.uni-miskolc.hu/</weblap>
+		</ceg>
+		<beosztas>hallgató</beosztas>
+		<telefonszam>+421 907 667 190</telefonszam>
+		<email>simon.dani626@gmail.com</email>	
+	</nevjegykartya>
+	<nevjegykartya id="2">
+		<nev>Big Money</nev>
+		<ceg>
+			<nev>Blaze</nev>
+			<cim>
+				<iranyitoszam>98021</iranyitoszam>
+				<varos>Miami</varos>
+				<utca>Hoax street</utca>
+				<hazszam>900</hazszam>
+			</cim>
+			<telefonszam>+123 456 789</telefonszam>
+			<weblap>https://www.definitelynotahoax.com</weblap>
+		</ceg>
+		<beosztas>CEO</beosztas>
+		<telefonszam>+123 567 890</telefonszam>
+		<email>big.money@definitelynotahoax.com</email>	
+	</nevjegykartya>
+</nevjegykartyak>
