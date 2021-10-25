@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- <!DOCTYPE szemelyek SYSTEM "szemelyekXUE9MH.DTD"> -->
 
-<szemelyek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="szemelyekXUE9MH.xsd">
+<szemelyek> <!--  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="szemelyekXUE9MH.xsd"> -->
 	<szemely id="x1">
 		<nev>Simon Daniel</nev>
 		<kor>23</kor>
