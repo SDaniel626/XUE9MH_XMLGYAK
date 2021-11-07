@@ -7,50 +7,53 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.xml.sax.SAXException;
-
 import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 public class DomReadXUE9MH {
 	
-	public static void main(String[] args) {
-		File xmlFile = new File("src/domXUE9MH/usersXUE9MH.xml");
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+	public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException {
+		File file = new File("usersXUE9MH.xml");
 		
-		try {
-			DocumentBuilder db = dbf.newDocumentBuilder();
-			Document doc = db.parse(xmlFile);
-			doc.getDocumentElement().normalize();
-			Element root = doc.getDocumentElement();
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder dBuilder = factory.newDocumentBuilder();
+		
+		Document doc = dBuilder.parse(file);
+		
+		doc.getDocumentElement().normalize();
+		
+		System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
+		
+		NodeList nList = doc.getElementsByTagName("user");
+		
+		for (int i = 0; i < nList.getLength(); i++) {
+			Node node = nList.item(i);
 			
-			System.out.println("Root element: " + root.getTagName());
+			System.out.println("\nCurrent Element: " + node.getNodeName());
 			
-			NodeList nodeList = root.getChildNodes();
-			
-			for (int i = 1; i < nodeList.getLength(); i++) {
-//				Node nNode = nodeList.item(i);
-//				
-//				System.out.println("\nCurrent Element: " + nNode.getNodeName());
-				Element el = (Element) nodeList.item(i);
-				System.out.println("\nCurrent Element: " + el.getNodeName());
-				String attrVal = el.getAttribute("id");
-				System.out.println("id: "+attrVal);
+			if(node.getNodeType()==Node.ELEMENT_NODE) {
+				Element elem = (Element) node;
 				
-				NodeList userValues = el.getChildNodes();
+				String uid = elem.getAttribute("id");
 				
+				Node node1 = elem.getElementsByTagName("firstname").item(0);
+				String fname = node1.getTextContent();
 				
-				for(int j = 1; j < userValues.getLength(); j+=2) {
-					Element userValue = (Element)userValues.item(j);
-					String value = userValue.getTextContent();
-					String tagname = userValue.getTagName();
-					System.out.println("  "+tagname+" : "+value);
-				}
+				Node node2 = elem.getElementsByTagName("lastname").item(0);
+				String lname = node2.getTextContent();
+				
+				Node node3 = elem.getElementsByTagName("profession").item(0);
+				String pname = node3.getTextContent();
+				
+				System.out.printf("User id = %s%n", uid);
+				System.out.printf("First name = %s%n", fname);
+				System.out.printf("Last name = %s%n", lname);
+				System.out.printf("Profession = %s%n", pname);
 			}
-		}catch(IOException | SAXException | ParserConfigurationException | ClassCastException e) {
-			e.printStackTrace();
 		}
+		
 	}
 }
