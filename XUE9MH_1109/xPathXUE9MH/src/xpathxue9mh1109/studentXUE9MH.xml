@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class>
+<class xsi:noNamespaceSchemaLocation="studentXUE9MH.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<student id="01">
 		<keresztnev>Daniel</keresztnev>
 		<vezeteknev>Simon</vezeteknev>

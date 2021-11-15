@@ -43,14 +43,40 @@ public class xPathXUE9MH {
 			expression = "class/student[2]";
 			//5) Válassza ki a utolsó student elemet, amely a class elem gyermeke.
 			expression = "class/student[last()]";
-			//6) 
-			
+			//6) Válassza ki a utolsó elotti student elemet, amely a class elem gyermeke
+			expression = "class/student[last()-1]";
+			//7) Válassza ki az elso két student elemet, amelyek a class elem gyermekei
+			expression = "class/student[position()<3]";
+			//8) Válassza ki class elem osszes gyermek elemét.
+			expression = "class/*";
+			//9) Válassza ki az összes student elemet, amely rendelkezik legalább egy bármilyen attribútummal.
+			expression = "class/student[@*]";
+			//10) Válassza ki a dokumentum összes elemét
+			expression = "//*";
+			//11) Válassza ki a class elem összes student elemét, amelynél a kor>20
+			expression = "//*[kor>20]";
+			//12) Válassza ki az összes student elem összes keresztnev és vezeteknev csommópontot
+			expression = "class/student/keresztnev | class/student/vezeteknev";
+
 			NodeList nodeList = (NodeList) xPath.compile(expression).evaluate(document, XPathConstants.NODESET);
 			
 			for(int i = 0; i < nodeList.getLength(); i++) {
 				Node node = nodeList.item(i);
 				
 				System.out.println("\nAktualis elem: " + node.getNodeName());
+				
+				//csak a 12. lekerdezesnel hasznalatos
+				if(node.getNodeType() == Node.ELEMENT_NODE && node.getNodeName().equals("keresztnev")) {
+					Element element = (Element) node;
+					
+					System.out.println(element.getTextContent());
+				}
+				//csak a 12. lekerdezesnel hasznalatos
+				if(node.getNodeType() == Node.ELEMENT_NODE && node.getNodeName().equals("vezeteknev")) {
+					Element element = (Element) node;
+					
+					System.out.println(element.getTextContent());
+				}
 				
 				
 				if(node.getNodeType() == Node.ELEMENT_NODE && node.getNodeName().equals("student")) {
