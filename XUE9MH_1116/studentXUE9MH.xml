@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class>
+	<student id="01">
+		<vezeteknev>Simon</vezeteknev>
+		<keresztnev>Daniel</keresztnev>		
+		<becenev>Dani</becenev>
+		<kor>23</kor>
+	</student>
+	<student id="02">
+		<vezeteknev>Nagy</vezeteknev>
+		<keresztnev>Sandor</keresztnev>
+		<becenev>Sanyi</becenev>
+		<kor>18</kor>
+	</student>
+	<student id="03">
+		<vezeteknev>Sestak</vezeteknev>
+		<keresztnev>Zsolt</keresztnev>
+		<becenev>Zsolti</becenev>
+		<kor>21</kor>
+	</student>
+</class>

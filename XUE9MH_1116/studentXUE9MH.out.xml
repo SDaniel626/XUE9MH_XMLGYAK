@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <table border="5" bordercolor="black">
+            <tr bgcolor="green">
+                <th>Vezeteknev</th><th>Keresztnev</th><th>Becenev</th><th>Kor</th>
+            </tr>
+            <tr>
+                <td>Simon</td><td>Daniel</td><td>Dani</td><td>23</td>
+            </tr>
+            <tr>
+                <td>Nagy</td><td>Sandor</td><td>Sanyi</td><td>18</td>
+            </tr>
+            <tr>
+                <td>Sestak</td><td>Zsolt</td><td>Zsolti</td><td>21</td>
+            </tr>
+        </table>
+    </body>
+</html>
