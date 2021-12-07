@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Gyorsetterem xsi:noNamespaceSchemaLocation="XMLSchemaXUE9MH.xsd"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Gyros>
+		<GyrosID>1</GyrosID>
+		<Suly>250</Suly>
+		<Toltelek>Minden_Csipos</Toltelek>
+		<GyrososFK>1</GyrososFK>
+	</Gyros>
+	<Gyros>
+		<GyrosID>2</GyrosID>
+		<Suly>500</Suly>
+		<Toltelek>Minden</Toltelek>
+		<GyrososFK>1</GyrososFK>
+	</Gyros>
+	<Gyrosos>
+		<GyrososID>1</GyrososID>
+		<Nev>Hammas</Nev>
+		<Email>hammas@hesbollah.allah</Email>
+		<Telefonszam>0608449860</Telefonszam>
+		<Nyitvatartas>
+			<Hetkoznap>0820</Hetkoznap>
+			<Hetvege_unnepek>1116</Hetvege_unnepek>
+		</Nyitvatartas>
+	</Gyrosos>
+	<Rendel>
+		<GyrosFK>1</GyrosFK>
+		<VasarloFK>1</VasarloFK>
+	</Rendel>
+	<Vasarlo>
+		<VasarloID>1</VasarloID>
+		<Nev>Simon Daniel</Nev>
+		<Telefonszam>0905338642</Telefonszam>
+		<Cim>
+			<Hazszam>23</Hazszam>
+			<Utca>Egyetem ut</Utca>
+			<Varos>Miskolc</Varos>
+		</Cim>
+	</Vasarlo>
+	<Beszallit>
+		<GyrososFK>1</GyrososFK>
+		<BeszallitoFK>1</BeszallitoFK>
+		<Termek>Hus</Termek>
+		<Datum>2021-12-23</Datum>
+	</Beszallit>
+	<Beszallito>
+		<BeszallitoID>1</BeszallitoID>
+		<Nev>Mucsen-ducsen</Nev>
+		<Email>muchen@duchen.ak</Email>
+		<Telefonszam>0756354789</Telefonszam>
+		<Cim>
+			<Hazszam>12</Hazszam>
+			<Utca>Hajnal</Utca>
+			<Varos>Debrecen</Varos>
+		</Cim>
+	</Beszallito>
+	<Kiszallito>
+		<KiszallitoID>1</KiszallitoID>
+		<Nev>Nagy Sanyi</Nev>
+		<Email>sanyi.nagy@gmail.com</Email>
+		<Telefonszam>0514654254</Telefonszam>
+		<GyrososFK>1</GyrososFK>
+	</Kiszallito>
+	<Bankkartya>
+		<Kartyaszam>1234432112344321</Kartyaszam>
+		<Bank>OTP</Bank>
+		<Tipus>Visa</Tipus>
+		<Lejarati_datum>11/21</Lejarati_datum>
+		<VasarloFK>1</VasarloFK>
+	</Bankkartya>
+	<Bankkartya>
+		<Kartyaszam>7456654774566547</Kartyaszam>
+		<Bank>Erste</Bank>
+		<Tipus>Master Card</Tipus>
+		<Lejarati_datum>06/25</Lejarati_datum>
+		<VasarloFK>1</VasarloFK>
+	</Bankkartya>
+</Gyorsetterem>

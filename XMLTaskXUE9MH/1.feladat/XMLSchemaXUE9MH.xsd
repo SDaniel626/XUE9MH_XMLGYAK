@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:element name="Gyorsetterem" type="gyorsetteremType">
+		<xs:key name="GyrosPK">
+			<xs:selector xpath="Gyros" />
+			<xs:field xpath="GyrosID" />
+		</xs:key>
+		<xs:key name="GyrososPK">
+			<xs:selector xpath="Gyrosos" />
+			<xs:field xpath="GyrososID" />
+		</xs:key>
+		<xs:key name="VasarloPK">
+			<xs:selector xpath="Vasarlo" />
+			<xs:field xpath="VasarloID" />
+		</xs:key>
+		<xs:key name="BeszallitoPK">
+			<xs:selector xpath="Beszallito" />
+			<xs:field xpath="BeszallitoID" />
+		</xs:key>
+		<xs:key name="KiszallitoPK">
+			<xs:selector xpath="Kiszallito" />
+			<xs:field xpath="KiszallitoID" />
+		</xs:key>
+		<xs:key name="BankkartyaPK">
+			<xs:selector xpath="Bankkartya" />
+			<xs:field xpath="Kartyaszam" />
+		</xs:key>
+		<xs:keyref refer="GyrososPK" name="GyrosGyartojaFK">
+			<xs:selector xpath="Gyros" />
+			<xs:field xpath="GyrososFK" />
+		</xs:keyref>
+		<xs:keyref refer="VasarloPK" name="BankkartyaTulajFK">
+			<xs:selector xpath="Bankkartya" />
+			<xs:field xpath="VasarloFK" />
+		</xs:keyref>
+		<xs:keyref refer="GyrososPK" name="kiszallitoGyrososFK">
+			<xs:selector xpath="Kiszallito" />
+			<xs:field xpath="GyrososFK" />
+		</xs:keyref>
+				<xs:keyref refer="GyrosPK" name="vasarloGyrosaFK">
+			<xs:selector xpath="Rendel" />
+			<xs:field xpath="GyrosFK" />
+		</xs:keyref>
+				<xs:keyref refer="VasarloPK" name="gyrosVasarloFK">
+			<xs:selector xpath="Rendel" />
+			<xs:field xpath="VasarloFK" />
+		</xs:keyref>
+		<xs:keyref refer="BeszallitoPK" name="gyrososBeszallitottolFK">
+			<xs:selector xpath="Beszallit" />
+			<xs:field xpath="BeszallitoFK" />
+		</xs:keyref>
+		<xs:keyref refer="GyrososPK" name="beszallitoGyrososnakFK">
+			<xs:selector xpath="Beszallit" />
+			<xs:field xpath="GyrososFK" />
+		</xs:keyref>
+	</xs:element>
+	
+	<xs:complexType name="gyorsetteremType">
+		<xs:sequence>
+			<xs:element name="Gyros" type="gyrosType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Gyrosos" type="gyrososType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Rendel" type="rendelType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Vasarlo" type="vasarloType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Beszallit" type="beszallitType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Beszallito" type="beszallitoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Kiszallito" type="kiszallitoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Bankkartya" type="bankkartyaType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="gyrosType">
+		<xs:sequence>
+			<xs:element name="GyrosID" type="xs:integer"/>
+			<xs:element name="Suly" type="xs:integer"/>
+			<xs:element name="Toltelek" type="xs:string" maxOccurs="unbounded"/>
+			<xs:element name="GyrososFK" type="xs:integer"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="gyrososType">
+		<xs:sequence>
+			<xs:element name="GyrososID" type="xs:integer"/>
+			<xs:element name="Nev" type="xs:string"/>
+			<xs:element name="Email" type="xs:string"/>
+			<xs:element name="Telefonszam" type="xs:string"/>
+			<xs:element name="Nyitvatartas" type="nyitvatartasType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="nyitvatartasType">
+		<xs:sequence>
+			<xs:element name="Hetkoznap" type="xs:integer"/>
+			<xs:element name="Hetvege_unnepek" type="xs:integer"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="rendelType">
+		<xs:sequence>
+			<xs:element name="GyrosFK" type="xs:integer"/>
+			<xs:element name="VasarloFK" type="xs:integer"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="vasarloType">
+		<xs:sequence>
+			<xs:element name="VasarloID" type="xs:integer"/>
+			<xs:element name="Nev" type="xs:string"/>
+			<xs:element name="Telefonszam" type="xs:string"/>
+			<xs:element name="Cim" type="cimType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="cimType">
+		<xs:sequence>
+			<xs:element name="Hazszam" type="xs:integer"/>
+			<xs:element name="Utca" type="xs:string"/>
+			<xs:element name="Varos" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="beszallitType">
+		<xs:sequence>
+			<xs:element name="GyrososFK" type="xs:integer"/>
+			<xs:element name="BeszallitoFK" type="xs:integer"/>
+			<xs:element name="Termek" type="xs:string"/>
+			<xs:element name="Datum" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="beszallitoType">
+		<xs:sequence>
+			<xs:element name="BeszallitoID" type="xs:integer"/>
+			<xs:element name="Nev" type="xs:string"/>
+			<xs:element name="Email" type="xs:string"/>
+			<xs:element name="Telefonszam" type="xs:string"/>
+			<xs:element name="Cim" type="cimType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="kiszallitoType">
+		<xs:sequence>
+			<xs:element name="KiszallitoID" type="xs:integer"/>
+			<xs:element name="Nev" type="xs:string"/>
+			<xs:element name="Email" type="xs:string"/>
+			<xs:element name="Telefonszam" type="xs:string"/>
+			<xs:element name="GyrososFK" type="xs:integer"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="bankkartyaType">
+		<xs:sequence>
+			<xs:element name="Kartyaszam" type="xs:integer"/>
+			<xs:element name="Bank" type="xs:string"/>
+			<xs:element name="Tipus" type="xs:string"/>
+			<xs:element name="Lejarati_datum" type="xs:string"/>
+			<xs:element name="VasarloFK" type="xs:integer"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
