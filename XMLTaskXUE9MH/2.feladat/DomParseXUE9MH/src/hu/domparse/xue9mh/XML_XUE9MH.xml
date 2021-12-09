@@ -19,6 +19,7 @@
 			<Hetkoznap>0820</Hetkoznap>
 			<Hetvege_unnepek>1116</Hetvege_unnepek>
 		</Nyitvatartas>
+		<KiszallitoFK refid="1">Nagy Sanyi</KiszallitoFK>
 	</Gyrosos>
 	<Rendel>
 		<GyrosFK refid="1">Minden_Csipos</GyrosFK>

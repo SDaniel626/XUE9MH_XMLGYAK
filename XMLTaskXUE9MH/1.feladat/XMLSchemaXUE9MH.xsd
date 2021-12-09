@@ -85,6 +85,7 @@
 			<xs:element name="Email" type="xs:string"/>
 			<xs:element name="Telefonszam" type="xs:string"/>
 			<xs:element name="Nyitvatartas" type="nyitvatartasType"/>
+			<xs:element name="KiszallitoFK" type="xs:integer"/>
 		</xs:sequence>
 	</xs:complexType>
 	

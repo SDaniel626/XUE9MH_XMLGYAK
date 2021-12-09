@@ -103,6 +103,7 @@ public class DomReadXUE9MH {
 				getElement(eElement, "Telefonszam", "Telefonszam");
 				getElement(eElement, "Hetkoznap", "Hetkoznap");
 				getElement(eElement, "Hetvege_unnepek", "Hetvege_unnepek");
+				getElement(eElement, "KiszallitoFK", "KiszallitoFK");
 
 			}
 		}
