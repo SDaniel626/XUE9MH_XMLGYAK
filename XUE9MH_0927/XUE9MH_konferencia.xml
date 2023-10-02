@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<konferencia>
+	<cim>Mesterséges Inteligencia - Ellenség vagy Barát</cim>
+	<hallgatok>
+		<hallgato>
+			<nev>Dudás Csaba</nev>
+			<lakcim>8085 Bodmér Teréz krt. 48.</lakcim>
+		</hallgato>
+		<hallgato>
+			<nev>Benkó Károly</nev>
+			<lakcim>6311 Öregcserto Dayka Gábor u. 87.</lakcim>
+		</hallgato>
+	</hallgatok>
+	<helyszin>Miskolci Egyetem III eloado</helyszin>
+	<eloado>
+		<nev>Albert Zweistein</nev>
+		<adoszam>12345678</adoszam>
+		<lakcim>Menyorszag kapuja 12, Sztratoszféra</lakcim>
+	</eloado>
+	<datum>2023.10.13.</datum>
+</konferencia>
