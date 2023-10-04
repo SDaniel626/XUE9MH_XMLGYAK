@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE XUE9MH_modell SYSTEM "XUE9MH_ertodtd.dtd">
+<XUE9MH_modell>
+	<A a="x01">
+		<Ab>
+			<Ax/>
+			<Ay/>
+		</Ab>
+		<c>
+			<d/>
+			<e/>
+		</c>
+	</A>
+	<B a="x02">
+		<Bb>
+			<Bx/>
+			<By/>
+		</Bb>
+		<CFK/>
+	</B>
+	<C a="x03">
+		<Cb/>
+	</C>
+	<AB>
+		<AFK/>
+		<BFK/>
+		<ABc/>
+	</AB>
+	
+</XUE9MH_modell>
