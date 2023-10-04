@@ -1,0 +1,16 @@
+<!ELEMENT XUE9MH_modell (A+,B+,C+,AB?,BC?)>
+
+<!ELEMENT A (b,c)>
+<!ATTLIST A a ID #REQUIRED>
+<!ELEMENT b (x,y)>
+<!ELEMENT x (#PCDATA)>
+<!ELEMENT y (#PCDATA)>
+<!ELEMENT c (d,e)>
+<!ELEMENT d (#PCDATA)>
+<!ELEMENT e (#PCDATA)>
+
+<!ELEMENT B (b)>
+<!ATTLIST B a ID #REQUIRED>
+<!ELEMENT b (x,y)>
+<!ELEMENT x (#PCDATA)>
+<!ELEMENT y (#PCDATA)>

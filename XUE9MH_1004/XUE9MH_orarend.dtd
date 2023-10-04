@@ -1,0 +1,12 @@
+<!ELEMENT SD_orarend (ora+)>
+<!ELEMENT ora (targy+,idopont+,helyszin+,oktato+,szak+)>
+<!ATTLIST ora ID ID #REQUIRED>
+<!ATTLIST ora tipus (EA | GYK) "EA">
+<!ELEMENT idopont (nap,tol,ig)>
+<!ELEMENT targy (#PCDATA)>
+<!ELEMENT nap (#PCDATA)>
+<!ELEMENT tol (#PCDATA)>
+<!ELEMENT ig (#PCDATA)>
+<!ELEMENT helyszin (#PCDATA)>
+<!ELEMENT oktato (#PCDATA)>
+<!ELEMENT szak (#PCDATA)>
