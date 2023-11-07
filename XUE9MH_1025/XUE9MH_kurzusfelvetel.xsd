@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	
+	<xs:attribute name="tanev" type="xs:string"/>
+	<xs:attribute name="egyetem" type="xs:string"/>
+	
+	<xs:element name="XUE9MH_kurzusfelvetel">
+		<xs:complexType>
+			<xs:sequence>
+				
+			</xs:sequence>
+			<xs:attribute ref="tanev"/>
+			<xs:attribute ref="egyetem"/>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

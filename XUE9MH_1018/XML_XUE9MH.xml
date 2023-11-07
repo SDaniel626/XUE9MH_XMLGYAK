@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<Fesztival_XUE9MH>
+<Fesztival_XUE9MH xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XML_Schema_XUE9MH.xsd">
 	<Fesztival Fesz_ID="Fe01" T_FK="T01">
 		<nev>Fyre</nev>
 		<helyszin>Great Exuma</helyszin>
@@ -8,80 +8,82 @@
 	</Fesztival>
 	<Tulajdonos T_ID="T01">
 		<nev>Billy McFarland</nev>
-		<adoszam>12345678-2-10</adoszam>
+		<adoszam>12345678</adoszam>
 		<alapitas>2015</alapitas>
-		<bevetel>5.2 million dollars</bevetel>
+		<bevetel>5200000</bevetel>
 	</Tulajdonos>
-	<Fellepo FEL_ID="" Fesz_FK="T01">
-		<nev></nev>
-		<orszag></orszag>
-		<dij></dij>
+	<Fellepo FEL_ID="F01" Fesz_FK="T01">
+		<nev>Billie Elish</nev>
+		<orszag>UK</orszag>
+		<dij>3000000</dij>
 	</Fellepo>
-	<Fellepo FEL_ID="" Fesz_FK="T01">
-		<nev></nev>
-		<orszag></orszag>
-		<dij></dij>
+	<Fellepo FEL_ID="F02" Fesz_FK="T01">
+		<nev>Eminem</nev>
+		<orszag>USA</orszag>
+		<dij>5000000</dij>
 	</Fellepo>
-	<Bar B_ID="B01" Fesz_FK="T01" A_FK="">
-		<nev></nev>
-		<ital></ital>
-		<ceg></ceg>
+	<Bar B_ID="B01" Fesz_FK="T01" A_FK="A01">
+		<nev>Kek osztriga Bar</nev>
+		<ital>Cosmo</ital>
+		<ital>Redbull-Vodka</ital>
+		<ceg>Red Bull</ceg>
 	</Bar>
-	<Bar B_ID="B01" Fesz_FK="T01" A_FK="">
-		<nev></nev>
-		<ital></ital>
-		<ceg></ceg>	
+	<Bar B_ID="B01" Fesz_FK="T01" A_FK="A02">
+		<nev>Roxy</nev>
+		<ital>Vodka-narancs</ital>
+		<ital>Mohito</ital>
+		<ceg>Coka Cola</ceg>	
 	</Bar>
-	<Alkalmazott A_ID="">
-		<nev></nev>
-		<muszak></muszak>
-		<fizetes></fizetes>
+	<Alkalmazott A_ID="A01">
+		<nev>Nagy Andrea</nev>
+		<muszak>Esti</muszak>
+		<fizetes>350000</fizetes>
 	</Alkalmazott>
-	<Alkalmazott A_ID="">
-		<nev></nev>
-		<muszak></muszak>
-		<fizetes></fizetes>
+	<Alkalmazott A_ID="A02">
+		<nev>Nehez Peter</nev>
+		<muszak>Delutan</muszak>
+		<fizetes>275000</fizetes>
 	</Alkalmazott>
-	<Resztvevo R_ID="" Fesz_FK="">
-		<nev></nev>
+	<Resztvevo R_ID="R01" Fesz_FK="F01">
+		<nev>Tom Sawyer</nev>
 		<lakcim>
-			<telepules></telepules>
-			<utca></utca>
-			<hazszam></hazszam>
+			<telepules>Bristol</telepules>
+			<utca>Darwin's street</utca>
+			<hazszam>22</hazszam>
 		</lakcim>
-		<diakigazolvany></diakigazolvany>
+		<diakigazolvany>12345678</diakigazolvany>
 	</Resztvevo>
-	<Resztvevo R_ID="" Fesz_FK="">
-		<nev></nev>
+	<Resztvevo R_ID="R02" Fesz_FK="F01">
+		<nev>Vagany Kristof</nev>
 		<lakcim>
-			<telepules></telepules>
-			<utca></utca>
-			<hazszam></hazszam>
+			<telepules>Dunaszerdahely</telepules>
+			<utca>Petofi utca</utca>
+			<hazszam>3</hazszam>
 		</lakcim>
-		<diakigazolvany></diakigazolvany>
+		<diakigazolvany>87654321</diakigazolvany>
 	</Resztvevo>
-	<Resztvevo R_ID="" Fesz_FK="">
-		<nev></nev>
+	<Resztvevo R_ID="R03" Fesz_FK="F01">
+		<nev>Kovacs Alexandra</nev>
 		<lakcim>
-			<telepules></telepules>
-			<utca></utca>
-			<hazszam></hazszam>
+			<telepules>Budapest</telepules>
+			<utca>Sereny utca</utca>
+			<hazszam>12</hazszam>
 		</lakcim>
-		<diakigazolvany></diakigazolvany>
+		<diakigazolvany>45678123</diakigazolvany>
 	</Resztvevo>
-	<Kozvelemeny K_ID="" NY_FK="" R_FK="">
-		<kerdezo></kerdezo>
+	<Kozvelemeny K_ID="K01" NY_FK="NY02" R_FK="R03">
+		<kerdezo>Guid Trutko</kerdezo>
 	</Kozvelemeny>
-	<Nyelvtudas NY_ID="">
-		<nyelv></nyelv>
-		<szint></szint>
+	<Nyelvtudas NY_ID="NY01">
+		<nyelv>angol</nyelv>
+		<szint>B</szint>
 	</Nyelvtudas>
-	<Nyelvtudas NY_ID="">
-		<nyelv></nyelv>
-		<szint></szint>
+	<Nyelvtudas NY_ID="NY02">
+		<nyelv>angol</nyelv>
+		<szint>C</szint>
 	</Nyelvtudas>
-	<Nyelvtudas NY_ID="">
-		<nyelv></nyelv>
-		<szint></szint>
+	<Nyelvtudas NY_ID="NY03">
+		<nyelv>nemet</nyelv>
+		<szint>B</szint>
 	</Nyelvtudas>
 </Fesztival_XUE9MH>
