@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<XUE9MH_kurzusfelvetel tanev="23/24_1" egyetem="ME" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XUE9MH_kurzusfelvetel.xsd">
+<XUE9MH_kurzusfelvetel tanev="23/24/1" egyetem="ME" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XUE9MH_kurzusfelvetel.xsd">
 	<hallgato evf="5">
 		<hnev>Simon Daniel</hnev>
 		<szulev>1998</szulev>
