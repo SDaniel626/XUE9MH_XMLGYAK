@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<XUE9MH_kurzusfelvetel tanev="23/24/1" egyetem="ME" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XUE9MH_kurzusfelvetel.xsd">
+	<hallgato evf="5">
+		<hnev>Simon Daniel</hnev>
+		<szulev>1998</szulev>
+		<szak>Mernokinfo</szak>
+	</hallgato>
+	<kurzusok>
+		<kurzus id="GEIAL31G-B" jovahagyas="igen">
+			<kurzusnev>Korszerű információs technológiák</kurzusnev>
+			<kredit>5</kredit>
+			<hely>inf.113</hely>
+			<idopont>Kedd 08:00-10:00</idopont>
+			<oktato>Árvai László Lajos</oktato>
+			<oraado>Soós Róbert</oraado>
+		</kurzus>
+		<kurzus id="GEIAL332-B">
+			<kurzusnev>Adatkezelés XML-ben</kurzusnev>
+			<kredit>5</kredit>
+			<hely>XXXII</hely>
+			<idopont>Kedd 12:00-14:00</idopont>
+			<oktato>Dr. Bednarik László</oktato>
+		</kurzus>
+		<kurzus id="GEIAL304-B">
+			<kurzusnev>Számítógép hálózatok</kurzusnev>
+			<kredit>5</kredit>
+			<hely>II</hely>
+			<idopont>Szerda 08:00-10:00</idopont>
+			<oktato>Dr. Kovács Sziveszter</oktato>
+		</kurzus>
+		<kurzus id="GEIAL333-B">
+			<kurzusnev>Web-es alkalmazások (Java)</kurzusnev>
+			<kredit>5</kredit>
+			<hely>online</hely>
+			<idopont>Kedd 16:00-18:00</idopont>
+			<oktato>Viktor Selmeci</oktato>
+		</kurzus>
+	</kurzusok>
+</XUE9MH_kurzusfelvetel>
