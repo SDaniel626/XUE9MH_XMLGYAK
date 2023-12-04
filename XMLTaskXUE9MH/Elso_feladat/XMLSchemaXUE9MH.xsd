@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+	
+	<!-- Altalanos sajat tipusok -->
+	
+	<xs:element name="Nev" type="xs:string"/>
+	<xs:element name="Email" type="xs:string"/>
+	<xs:element name="Telefonszam" type="telefonszamTipus"/>
+	
+	<!-- Gyorsetterem sajat tipusok -->
+	
+	<xs:element name="Nyitvatartas" type="nyitvatartasType"/>
+	
+	<!-- Gyros sajat tipusok -->
+	
+	<xs:element name="Suly" type="xs:integer"/>
+	<xs:element name="Toltelek" type="toltelekTipus"/>
+	
+	<!-- Vasarlo sajat tipusok -->
+	
+	<xs:element name="Cim" type="cimType"/>
+	
+	<!-- Bankkartya sajat tipusok -->
+	
+	<xs:element name="CCV" type="ccvTipus"/>
+	<xs:element name="Tipus" type="bankkartySzolgaltatoTipus"/>
+	<xs:element name="Lejarati_datum" type="xs:string"/>
+	
+	<!-- Beszallit kapcsolotabla sajat tipusok -->
+	
+	<xs:element name="Termek" type="xs:string"/>
+	<xs:element name="Datum" type="xs:date"/>
+	
+	<!-- Egyszeru tipusok -->
+		
+	<xs:simpleType name="bankkartySzolgaltatoTipus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Visa"/>
+			<xs:enumeration value="Master Card"/>
+			<xs:enumeration value="American Express"/>
+			<xs:enumeration value="Discover"/>
+			<xs:enumeration value="Maestro"/>
+			<xs:enumeration value="UnionPay"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="idTipus">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="oraTipus">
+    	<xs:restriction base="xs:string">
+    		<xs:pattern value="\d{4}"/>
+    	</xs:restriction>    
+    </xs:simpleType>
+    
+    <xs:simpleType name="telefonszamTipus">
+    	<xs:restriction base="xs:string">
+    		<xs:pattern value="\d{10}"/>
+    	</xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="toltelekTipus">
+    	<xs:restriction base="xs:string">
+    		<xs:enumeration value="hus"/>
+    		<xs:enumeration value="zoldseg"/>
+    		<xs:enumeration value="pikans"/>
+    		<xs:enumeration value="szosz"/>
+    	</xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="kartyaszamTipus">
+    	<xs:restriction base="xs:string">
+    		<xs:pattern value="\d{16}"/>
+    	</xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="ccvTipus">
+    	<xs:restriction base="xs:string">
+    		<xs:pattern value="\d{3}"/>
+    	</xs:restriction>
+    </xs:simpleType>
+	
+	<!-- Gyokerelem osszetett tipusa -->
+	<xs:complexType name="rootType">
+		<xs:sequence>
+			<xs:element name="Gyorsetterem" type="gyorsetteremType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Gyros" type="gyrosType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Rendelesek" type="rendelesekType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Vasarlo" type="vasarloType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Bankkartya" type="bankkartyaType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Beszallit" type="beszallitType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Beszallito" type="beszallitoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Tulaj" type="tulajType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- Egyebb osszetett tipusok -->
+	<xs:complexType name="gyorsetteremType">
+		<xs:sequence>
+			<xs:element ref="Nev"/>
+			<xs:element ref="Email"/>
+			<xs:element ref="Telefonszam"/>
+			<xs:element ref="Nyitvatartas"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="idTipus" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="gyrosType">
+		<xs:sequence>
+			<xs:element ref="Suly"/>
+			<xs:element ref="Toltelek" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="idTipus" use="required"/>
+		<xs:attribute name="gyorsetteremFK" type="idTipus" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="nyitvatartasType">
+		<xs:sequence>
+			<xs:element name="Hetkoznap" type="oraTipus"/>
+			<xs:element name="Hetvege_unnepek" type="oraTipus"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="rendelesekType">
+		<xs:sequence>
+			<xs:element name="Rendel" type="rendelType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="rendelType">
+		<xs:attribute name="gyrosFK" type="idTipus" use="required"/>
+		<xs:attribute name="vasarloFK" type="idTipus" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="vasarloType">
+		<xs:sequence>
+			<xs:element ref="Nev"/>
+			<xs:element ref="Telefonszam"/>
+			<xs:element ref="Cim"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="idTipus" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="cimType">
+		<xs:sequence>
+			<xs:element name="Hazszam" type="xs:integer"/>
+			<xs:element name="Utca" type="xs:string"/>
+			<xs:element name="Varos" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="bankkartyaType">
+		<xs:sequence>
+			<xs:element ref="CCV"/>
+			<xs:element ref="Tipus"/>
+			<xs:element ref="Lejarati_datum"/>
+		</xs:sequence>
+		<xs:attribute name="kartyaszam" type="kartyaszamTipus" use="required"/>
+		<xs:attribute name="vasarloFK" type="idTipus" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="beszallitType">
+		<xs:sequence>
+			<xs:element ref="Termek"/>
+			<xs:element ref="Datum"/>
+		</xs:sequence>
+		<xs:attribute name="gyorsetteremFK" type="idTipus" use="required"/>
+		<xs:attribute name="beszallitoFK" type="idTipus" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="beszallitoType">
+		<xs:sequence>
+			<xs:element ref="Nev"/>
+			<xs:element ref="Email"/>
+			<xs:element ref="Telefonszam"/>
+			<xs:element ref="Cim"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="idTipus" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="tulajType">
+		<xs:sequence>
+			<xs:element ref="Nev"/>
+			<xs:element ref="Email"/>
+			<xs:element ref="Telefonszam"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="idTipus" use="required"/>
+		<xs:attribute name="gyorsetteremFK" type="idTipus" use="required"/>
+	</xs:complexType>
+	
+	<!-- kulcsok -->	
+	
+	<xs:element name="XUE9MH" type="rootType">
+		<!-- Elsodleges kulcsok -->
+		<xs:key name="GyorsetteremPK">
+			<xs:selector xpath="Gyorsetterem" />
+			<xs:field xpath="@id" />
+		</xs:key>
+		<xs:key name="GyrosPK">
+			<xs:selector xpath="Gyros" />
+			<xs:field xpath="@id" />
+		</xs:key>
+		<xs:key name="VasarloPK">
+			<xs:selector xpath="Vasarlo" />
+			<xs:field xpath="@id" />
+		</xs:key>
+		<xs:key name="BankkartyaPK">
+			<xs:selector xpath="Bankkartya" />
+			<xs:field xpath="@kartyaszam" />
+		</xs:key>
+		<xs:key name="BeszallitoPK">
+			<xs:selector xpath="Beszallito" />
+			<xs:field xpath="@id" />
+		</xs:key>
+		<xs:key name="TulajPK">
+			<xs:selector xpath="Tulaj" />
+			<xs:field xpath="@id" />
+		</xs:key>
+		<!-- Idegen kulcsok -->
+		<xs:keyref refer="GyorsetteremPK" name="GyrosArusitojaFK">
+			<xs:selector xpath="Gyros" />
+			<xs:field xpath="@gyorsetteremFK" />
+		</xs:keyref>
+		<xs:keyref refer="GyrosPK" name="vasarloGyrosaFK">
+			<xs:selector xpath="Rendel" />
+			<xs:field xpath="@gyrosFK" />
+		</xs:keyref>
+		<xs:keyref refer="VasarloPK" name="gyrosVasarlojaFK">
+			<xs:selector xpath="Rendel" />
+			<xs:field xpath="@vasarloFK" />
+		</xs:keyref>
+		<xs:keyref refer="VasarloPK" name="BankkartyaTulajFK">
+			<xs:selector xpath="Bankkartya" />
+			<xs:field xpath="@vasarloFK" />
+		</xs:keyref>
+		<xs:keyref refer="BeszallitoPK" name="gyrososBeszallitottolFK">
+			<xs:selector xpath="Beszallit" />
+			<xs:field xpath="@beszallitoFK" />
+		</xs:keyref>
+		<xs:keyref refer="GyorsetteremPK" name="beszallitoGyrososnakFK">
+			<xs:selector xpath="Beszallit" />
+			<xs:field xpath="@gyorsetteremFK" />
+		</xs:keyref>
+		<xs:keyref refer="GyorsetteremPK" name="tulajGyorsettermeFK">
+			<xs:selector xpath="Tulaj" />
+			<xs:field xpath="@gyorsetteremFK" />
+		</xs:keyref>
+		<!-- ID egyediseg megkotes -->
+		<xs:unique name="egyediGyorsetteremID">
+			<xs:selector xpath="Gyorsetterem" />
+			<xs:field xpath="@id" />
+		</xs:unique>
+		<xs:unique name="egyediGyrosID">
+			<xs:selector xpath="Gyors" />
+			<xs:field xpath="@id" />
+		</xs:unique>
+		<xs:unique name="egyediVasarloID">
+			<xs:selector xpath="Vasarlo" />
+			<xs:field xpath="@id" />
+		</xs:unique>
+		<xs:unique name="egyediBankkartyaID">
+			<xs:selector xpath="Bankkartya" />
+			<xs:field xpath="@kartyaszam" />
+		</xs:unique>
+		<xs:unique name="egyediBeszallitoID">
+			<xs:selector xpath="Beszallito" />
+			<xs:field xpath="@id" />
+		</xs:unique>
+		<xs:unique name="egyediTulajID">
+			<xs:selector xpath="Tulaj" />
+			<xs:field xpath="@id" />
+		</xs:unique>
+	</xs:element>	
+</xs:schema>
