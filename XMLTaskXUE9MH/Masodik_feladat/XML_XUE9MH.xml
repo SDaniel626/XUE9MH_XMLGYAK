@@ -80,40 +80,43 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	</Vasarlo>
 	
 	<Vasarlo id="2">
-		<Nev>Veres Lipót</Nev>
+		<Nev>Veres Lipot</Nev>
 		<Telefonszam>0655156831</Telefonszam>
 		<Cim>
 			<Hazszam>29</Hazszam>
-			<Utca>Nyár utca</Utca>
-			<Varos>Salgótarján</Varos>
+			<Utca>Nyar utca</Utca>
+			<Varos>Salgotarjan</Varos>
 		</Cim>
 	</Vasarlo>
 	
 	<Vasarlo id="3">
-		<Nev>Seres Ádám</Nev>
+		<Nev>Seres Adam</Nev>
 		<Telefonszam>0655813448</Telefonszam>
 		<Cim>
 			<Hazszam>49</Hazszam>
-			<Utca>Rákóczi út</Utca>
+			<Utca>Rakoczi ut</Utca>
 			<Varos>Budapest</Varos>
 		</Cim>
 	</Vasarlo>
 	
 	<!-- Bankkartyak -->
 	
-	<Bankkartya kartyaszam="1234432112344321" vasarloFK="1">
+	<Bankkartya id="1" vasarloFK="1">
+		<Kartyaszam>1234432112344321</Kartyaszam>
 		<CCV>653</CCV>
 		<Tipus>Visa</Tipus>
 		<Lejarati_datum>11/24</Lejarati_datum>
 	</Bankkartya>
 	
-	<Bankkartya kartyaszam="7456654774566547" vasarloFK="2">
+	<Bankkartya id="2" vasarloFK="2">
+		<Kartyaszam>7456654774566547</Kartyaszam>
 		<CCV>534</CCV>
 		<Tipus>Master Card</Tipus>
 		<Lejarati_datum>06/25</Lejarati_datum>
 	</Bankkartya>
 	
-	<Bankkartya kartyaszam="5419298043384654" vasarloFK="3">
+	<Bankkartya id="3" vasarloFK="3">
+		<Kartyaszam>5419298043384654</Kartyaszam>
 		<CCV>052</CCV>
 		<Tipus>Master Card</Tipus>
 		<Lejarati_datum>10/27</Lejarati_datum>
@@ -154,8 +157,8 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 		<Email>dipmaster@dmmail.eu</Email>
 		<Telefonszam>0655395894</Telefonszam>
 		<Cim>
-			<Hazszam>12</Hazszam>
-			<Utca>Hajnal utca</Utca>
+			<Hazszam>24</Hazszam>
+			<Utca>Seres utca</Utca>
 			<Varos>Szombathely</Varos>
 		</Cim>
 	</Beszallito>
@@ -175,7 +178,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	</Tulaj>
 	
 	<Tulaj id="3" gyorsetteremFK="1">
-		<Nev>Jakab Géza</Nev>
+		<Nev>Jakab Geza</Nev>
 		<Email>JakabGeza@armyspy.com</Email>
 		<Telefonszam>0655317182</Telefonszam>
 	</Tulaj>

@@ -53,10 +53,11 @@ public class DomModifyXUE9MH {
 				Node staff = listOfElements.item(i);
 				if (staff.getNodeType() == Node.ELEMENT_NODE) {
 					String id = staff.getAttributes().getNamedItem("id").getTextContent();
+					
 					if (childElementID.equals(id.trim())) {
 
 						NodeList childNodes = staff.getChildNodes();
-
+						//beazonositjuk a gyerek elemet aminek modositjuk az erteket
 						for (int j = 0; j < childNodes.getLength(); j++) {
 							Node item = childNodes.item(j);
 							if (item.getNodeType() == Node.ELEMENT_NODE) {
@@ -73,16 +74,14 @@ public class DomModifyXUE9MH {
 					}
 
 				}
-
+				
 			}
 			
-			// Leegyszeritem a kiirast egy TransformerFactory es egy DOMSource objektum letrehozasaval  
+			// Leegyszeritem a kiirast egy TransformerFactory, egy DOMSource objektum es egy StreamResult letrehozasaval  
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
-			DOMSource source = new DOMSource(doc);
 			System.out.println("-----------After Modification-----------");
-			StreamResult consoleResult = new StreamResult(System.out);
-			transformer.transform(source, consoleResult);
+			transformer.transform(new DOMSource(doc), new StreamResult(System.out));
 		
 		} catch (ParserConfigurationException | SAXException | IOException  e) {
 			e.printStackTrace();

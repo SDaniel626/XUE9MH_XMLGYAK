@@ -162,7 +162,8 @@ public class DomReadXUE9MH {
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
 
-				System.out.println("Kartyaszam : " + eElement.getAttribute("kartyaszam"));
+				System.out.println("ID : " + eElement.getAttribute("id"));
+				getElement(eElement, "Kartyaszam", "Kartyaszam");
 				getElement(eElement, "CCV", "CCV");
 				getElement(eElement, "Tipus", "Tipus");
 				getElement(eElement, "Lejarati_datum", "Lejarati_datum");
