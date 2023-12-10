@@ -1,0 +1,94 @@
+{
+  "SD_orarend":{
+    "ora":[
+      {
+        "targy":"Korszeru Informacios Technologiak",
+        "oktato":"Árvai László Lajos",
+        "szak":"Mernök info",
+        "idopont":{
+          "tol":"8",
+          "nap":"Kedd",
+          "ig":"10"
+        },
+        "helyszin":"Inf. 103"
+      },
+      {
+        "targy":"Adatkezeles XML-ben",
+        "oktato":"Dr. Bendarik László",
+        "szak":"Mernök info",
+        "idopont":{
+          "tol":"12",
+          "nap":"Kedd",
+          "ig":"14"
+        },
+        "helyszin":"XXXII eloado"
+      },
+      {
+        "targy":"Webes alkalmazasok java",
+        "oktato":"Viktor Selmeci",
+        "szak":"Mernök info",
+        "idopont":{
+          "tol":"14",
+          "nap":"Kedd",
+          "ig":"16"
+        },
+        "helyszin":"online"
+      },
+      {
+        "targy":"Webes alkalmazasok java",
+        "oktato":"Viktor Selmeci",
+        "szak":"Mernök info",
+        "idopont":{
+          "tol":"16",
+          "nap":"Kedd",
+          "ig":"18"
+        },
+        "helyszin":"online"
+      },
+      {
+        "targy":"Szamitogepes Halozatok",
+        "oktato":"Dr. Kovacs Szilveszter",
+        "szak":"Mernök info",
+        "idopont":{
+          "tol":"8",
+          "nap":"Szerda",
+          "ig":"10"
+        },
+        "helyszin":"II eloado"
+      },
+      {
+        "targy":"Adatkezeles XML-ben",
+        "oktato":"Dr. Bednarik László",
+        "szak":"Mernök info",
+        "idopont":{
+          "tol":"10",
+          "nap":"Szerda",
+          "ig":"12"
+        },
+        "helyszin":"Inf. 101"
+      },
+      {
+        "targy":"Szamitogepes Halozatok",
+        "oktato":"Dr. Kovacs Szilveszter",
+        "szak":"Mernök info",
+        "idopont":{
+          "tol":"12",
+          "nap":"Csutortok",
+          "ig":"14"
+        },
+        "helyszin":"III eloado"
+      },
+      {
+        "targy":"Korszeru Informacios Technologiak",
+        "oktato":"Soós Róbert",
+        "szak":"Mernök info",
+        "idopont":{
+          "tol":"16",
+          "nap":"Csutortok",
+          "ig":"18"
+        },
+        "helyszin":"Inf. 114"
+      }
+    ]
+  }
+}

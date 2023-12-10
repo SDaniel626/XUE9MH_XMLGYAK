@@ -1,0 +1,94 @@
+{
+  "SD_orarend": {
+    "ora": [
+      {
+        "targy": "Korszeru Informacios Technologiak",
+        "idopont": {
+          "nap": "Kedd",
+          "tol": 8,
+          "ig": 10
+        },
+        "helyszin": "Inf.103",
+        "oktato": "Árvai László Lajos",
+        "szak": "Mernök info."
+      },
+      {
+        "targy": "Adatkezeles XML-ben",
+        "idopont": {
+          "nap": "Kedd",
+          "tol": 12,
+          "ig": 14
+        },
+        "helyszin": "XXXII eloado",
+        "oktato": "Dr. Bendarik László",
+        "szak": "Mernök info."
+      },
+      {
+        "targy": "Webes alkalmazasok java",
+        "idopont": {
+          "nap": "Kedd",
+          "tol": 14,
+          "ig": 16
+        },
+        "helyszin": "online",
+        "oktato": "Viktor Selmeci",
+        "szak": "Mernök info."
+      },
+      {
+        "targy": "Webes alkalmazasok java",
+        "idopont": {
+          "nap": "Kedd",
+          "tol": 16,
+          "ig": 18
+        },
+        "helyszin": "online",
+        "oktato": "Viktor Selmeci",
+        "szak": "Mernök info."
+      },
+      {
+        "targy": "Szamitogepes Halozatok",
+        "idopont": {
+          "nap": "Szerda",
+          "tol": 8,
+          "ig": 10
+        },
+        "helyszin": "II eloado",
+        "oktato": "Dr. Kovacs Szilveszter",
+        "szak": "Mernök info."
+      },
+      {
+        "targy": "Adatkezeles XML-ben",
+        "idopont": {
+          "nap": "Szerda",
+          "tol": 10,
+          "ig": 12
+        },
+        "helyszin": "Inf. 101",
+        "oktato": "Dr. Bendarik László",
+        "szak": "Mernök info."
+      },
+      {
+        "targy": "Szamitogepes Halozatok",
+        "idopont": {
+          "nap": "Csutortok",
+          "tol": 12,
+          "ig": 14
+        },
+        "helyszin": "III eloado",
+        "oktato": "Dr. Kovacs Szilveszter",
+        "szak": "Mernök info."
+      },
+      {
+        "targy": "Korszeru Informacios Technologiak",
+        "idopont": {
+          "nap": "Csutortok",
+          "tol": 16,
+          "ig": 18
+        },
+        "helyszin": "Inf. 114",
+        "oktato": "Soós Róbert",
+        "szak": "Mernök info."
+      }
+    ]
+  }
+}

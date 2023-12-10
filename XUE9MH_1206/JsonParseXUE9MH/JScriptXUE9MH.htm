@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>JSON parser</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<h3>Órarend</h3>
+<div id = "data"></div>
+<div>Válassza ki a feldolgozandó JSON fájlt!</div>
+<input type="file" accept=".json" id="file-in" >
+
+</body>
+<script>
+
+    const dataDiv = document.getElementById("data");
+    const fileInput = document.getElementById("file-in");
+
+    function handleFileSelect(event) {
+        const file = event.target.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const json = e.target.result;
+                writeData(json);
+            };
+            reader.readAsText(file);
+        }
+    }
+
+    function writeData(json) {
+        try {
+            dataDiv.innerHTML = "";
+            const obj = JSON.parse(json);
+            const array = obj.SD_orarend.ora;
+            for (let i = 0; i < array.length; i++) {
+                let child = document.createElement("div")
+                child.innerHTML = "<span style='color:blue'>Tárgy:</span><span> " + array[i].targy + "</span>";
+                dataDiv.appendChild(child);
+                child = document.createElement("div")
+                child.innerText = "Időpont: " + array[i].idopont.nap + " " + array[i].idopont.tol + "-" + array[i].idopont.ig;
+                dataDiv.appendChild(child);
+                child = document.createElement("div")
+                child.innerText = "Helyszín: " + array[i].helyszin;
+                dataDiv.appendChild(child);
+                child = document.createElement("div")
+                child.innerText = "Oktató: " + array[i].oktato;
+                dataDiv.appendChild(child);
+                child = document.createElement("div")
+                child.innerHTML = "<p style='margin-top:0px;'>Szak: " + array[i].szak + "</p>";
+                dataDiv.appendChild(child);
+            }
+        } catch (error) {
+            console.log(error)
+            let child = document.createElement("div");
+            child.innerHTML = "<p style='color:red'>Hibás input JSON formátum!</p>";
+            dataDiv.appendChild(child);
+        }
+    }
+
+    let json = '{"SD_orarend":{"ora":[{"targy":"Korszeru Informacios Technologiak","oktato":"Árvai László Lajos","szak":"Mernök info.","idopont":{"tol":8,"nap":"Kedd","ig":10},"helyszin":"Inf.103"},{"targy":"Adatkezeles XML-ben","oktato":"Dr. Bendarik László","szak":"Mernök info.","idopont":{"tol":12,"nap":"Kedd","ig":14},"helyszin":"XXXII eloado"},{"targy":"Webes alkalmazasok java","oktato":"Viktor Selmeci","szak":"Mernök info.","idopont":{"tol":14,"nap":"Kedd","ig":16},"helyszin":"online"},{"targy":"Webes alkalmazasok java","oktato":"Viktor Selmeci","szak":"Mernök info.","idopont":{"tol":16,"nap":"Kedd","ig":18},"helyszin":"online"},{"targy":"Szamitogepes Halozatok","oktato":"Dr. Kovacs Szilveszter","szak":"Mernök info.","idopont":{"tol":8,"nap":"Szerda","ig":10},"helyszin":"II eloado"},{"targy":"Adatkezeles XML-ben","oktato":"Dr. Bendarik László","szak":"Mernök info.","idopont":{"tol":10,"nap":"Szerda","ig":12},"helyszin":"Inf. 101"},{"targy":"Szamitogepes Halozatok","oktato":"Dr. Kovacs Szilveszter","szak":"Mernök info.","idopont":{"tol":12,"nap":"Csutortok","ig":14},"helyszin":"III eloado"},{"targy":"Korszeru Informacios Technologiak","oktato":"Soós Róbert","szak":"Mernök info.","idopont":{"tol":16,"nap":"Csutortok","ig":18},"helyszin":"Inf. 114"}]}}';
+    writeData(json);
+
+    fileInput.addEventListener("change", handleFileSelect);
+
+</script>
+</html>
