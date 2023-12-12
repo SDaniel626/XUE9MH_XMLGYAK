@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<XUE9MH xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchemaXUE9MH.xsd">
+    	
+    <!-- Gyorsettermek -->
+    	
+	
+    <Gyorsetterem id="1">
+        		
+        <Nev>Hammas</Nev>
+        		
+        <Email>hammas@hesbollah.allah</Email>
+        		
+        <Telefonszam>0608449860</Telefonszam>
+        		
+        <Nyitvatartas>
+            			
+            <Hetkoznap>0820</Hetkoznap>
+            			
+            <Hetvege_unnepek>1116</Hetvege_unnepek>
+            		
+        </Nyitvatartas>
+        	
+    </Gyorsetterem>
+    		
+	
+    <Gyorsetterem id="2">
+        		
+        <Nev>DonnerKebab</Nev>
+        		
+        <Email>donnerk@gmail.com</Email>
+        		
+        <Telefonszam>0608456321</Telefonszam>
+        		
+        <Nyitvatartas>
+            			
+            <Hetkoznap>1422</Hetkoznap>
+            			
+            <Hetvege_unnepek>1116</Hetvege_unnepek>
+            		
+        </Nyitvatartas>
+        	
+    </Gyorsetterem>
+    	
+	
+    <Gyorsetterem id="3">
+        		
+        <Nev>GyrosKing</Nev>
+        		
+        <Email>info@gyrosking.de</Email>
+        		
+        <Telefonszam>0608449532</Telefonszam>
+        		
+        <Nyitvatartas>
+            			
+            <Hetkoznap>0618</Hetkoznap>
+            			
+            <Hetvege_unnepek>1120</Hetvege_unnepek>
+            		
+        </Nyitvatartas>
+        	
+    </Gyorsetterem>
+    	
+	
+    <!-- Gyros-ok -->
+    	
+	
+    <Gyros gyorsetteremFK="1" id="1">
+        		
+        <Suly>250</Suly>
+        		
+        <Toltelek>hus</Toltelek>
+        		
+        <Toltelek>zoldseg</Toltelek>
+        		
+        <Toltelek>szosz</Toltelek>
+        	
+    </Gyros>
+    	
+	
+    <Gyros gyorsetteremFK="2" id="2">
+        		
+        <Suly>500</Suly>
+        		
+        <Toltelek>hus</Toltelek>
+        		
+        <Toltelek>zoldseg</Toltelek>
+        		
+        <Toltelek>pikans</Toltelek>
+        		
+        <Toltelek>szosz</Toltelek>
+        	
+    </Gyros>
+    	
+	
+    <Gyros gyorsetteremFK="2" id="3">
+        		
+        <Suly>350</Suly>
+        		
+        <Toltelek>zoldseg</Toltelek>
+        		
+        <Toltelek>szosz</Toltelek>
+        		
+        <Toltelek>pikans</Toltelek>
+        	
+    </Gyros>
+    	
+	
+    <!-- Rendelesek kapcsolo tabla -->
+    	
+	
+    <Rendelesek>
+        		
+        <Rendel gyrosFK="1" vasarloFK="3"/>
+        		
+        <Rendel gyrosFK="2" vasarloFK="1"/>
+        		
+        <Rendel gyrosFK="3" vasarloFK="2"/>
+        	
+    </Rendelesek>
+    	
+	
+    <!-- Vasarlok -->
+    	
+	
+    <Vasarlo id="1">
+        		
+        <Nev>Simon Daniel</Nev>
+        		
+        <Telefonszam>0655510430</Telefonszam>
+        		
+        <Cim>
+            			
+            <Hazszam>23</Hazszam>
+            			
+            <Utca>Egyetem ut</Utca>
+            			
+            <Varos>Miskolc</Varos>
+            		
+        </Cim>
+        	
+    </Vasarlo>
+    	
+	
+    <Vasarlo id="2">
+        		
+        <Nev>Veres Lipot</Nev>
+        		
+        <Telefonszam>0655156831</Telefonszam>
+        		
+        <Cim>
+            			
+            <Hazszam>29</Hazszam>
+            			
+            <Utca>Nyar utca</Utca>
+            			
+            <Varos>Salgotarjan</Varos>
+            		
+        </Cim>
+        	
+    </Vasarlo>
+    	
+	
+    <Vasarlo id="3">
+        		
+        <Nev>Seres Adam</Nev>
+        		
+        <Telefonszam>0655813448</Telefonszam>
+        		
+        <Cim>
+            			
+            <Hazszam>49</Hazszam>
+            			
+            <Utca>Rakoczi ut</Utca>
+            			
+            <Varos>Budapest</Varos>
+            		
+        </Cim>
+        	
+    </Vasarlo>
+    	
+	
+    <!-- Bankkartyak -->
+    	
+	
+    <Bankkartya id="1" vasarloFK="1">
+        		
+        <Kartyaszam>1234432112344321</Kartyaszam>
+        		
+        <CCV>653</CCV>
+        		
+        <Tipus>Visa</Tipus>
+        		
+        <Lejarati_datum>11/24</Lejarati_datum>
+        	
+    </Bankkartya>
+    	
+	
+    <Bankkartya id="2" vasarloFK="2">
+        		
+        <Kartyaszam>7456654774566547</Kartyaszam>
+        		
+        <CCV>534</CCV>
+        		
+        <Tipus>Master Card</Tipus>
+        		
+        <Lejarati_datum>06/25</Lejarati_datum>
+        	
+    </Bankkartya>
+    	
+	
+    <Bankkartya id="3" vasarloFK="3">
+        		
+        <Kartyaszam>5419298043384654</Kartyaszam>
+        		
+        <CCV>052</CCV>
+        		
+        <Tipus>Master Card</Tipus>
+        		
+        <Lejarati_datum>10/27</Lejarati_datum>
+        	
+    </Bankkartya>
+    	
+	
+    <!-- Beszallit Kapcsolo tabla -->
+    	
+	
+    <Beszallit beszallitoFK="1" gyorsetteremFK="3">
+        		
+        <Termek>Hus</Termek>
+        		
+        <Datum>2023-12-05</Datum>
+        	
+    </Beszallit>
+    	
+	
+    <Beszallit beszallitoFK="1" gyorsetteremFK="3">
+        		
+        <Termek>Zoldseg</Termek>
+        		
+        <Datum>2023-11-28</Datum>
+        	
+    </Beszallit>
+    	
+	
+    <Beszallit beszallitoFK="2" gyorsetteremFK="2">
+        		
+        <Termek>Szosz</Termek>
+        		
+        <Datum>2023-06-23</Datum>
+        	
+    </Beszallit>
+    	
+	
+    <!-- Beszallito -->
+    	
+	
+    <Beszallito id="1">
+        		
+        <Nev>Mucsen-ducsen</Nev>
+        		
+        <Email>muchen@duchen.ak</Email>
+        		
+        <Telefonszam>0756354789</Telefonszam>
+        		
+        <Cim>
+            			
+            <Hazszam>12</Hazszam>
+            			
+            <Utca>Hajnal utca</Utca>
+            			
+            <Varos>Debrecen</Varos>
+            		
+        </Cim>
+        	
+    </Beszallito>
+    	
+	
+    <Beszallito id="2">
+        		
+        <Nev>Dipmaster</Nev>
+        		
+        <Email>dipmaster@dmmail.eu</Email>
+        		
+        <Telefonszam>0655395894</Telefonszam>
+        		
+        <Cim>
+            			
+            <Hazszam>24</Hazszam>
+            			
+            <Utca>Seres utca</Utca>
+            			
+            <Varos>Szombathely</Varos>
+            		
+        </Cim>
+        	
+    </Beszallito>
+    	
+	
+    <!-- Tulajok -->
+    	
+	
+    <Tulaj gyorsetteremFK="3" id="1">
+        		
+        <Nev>Nagy Sanyi</Nev>
+        		
+        <Email>sanyi.nagy@gmail.com</Email>
+        		
+        <Telefonszam>0514654254</Telefonszam>
+        	
+    </Tulaj>
+    	
+	
+    <Tulaj gyorsetteremFK="2" id="2">
+        		
+        <Nev>Fejes Kristof</Nev>
+        		
+        <Email>FejesKristof@rhyta.com</Email>
+        		
+        <Telefonszam>0655355327</Telefonszam>
+        	
+    </Tulaj>
+    	
+	
+    <Tulaj gyorsetteremFK="1" id="3">
+        		
+        <Nev>Jakab Geza</Nev>
+        		
+        <Email>JakabGeza@armyspy.com</Email>
+        		
+        <Telefonszam>0655317182</Telefonszam>
+        	
+    </Tulaj>
+    
+</XUE9MH>

@@ -246,9 +246,11 @@
 			<xs:selector xpath="Beszallit" />
 			<xs:field xpath="@gyorsetteremFK" />
 		</xs:keyref>
-		<xs:keyref refer="GyorsetteremPK" name="tulajGyorsettermeFK">
+		
+		<!-- 1:1 kapcsolat megvalositas -->
+		<xs:unique name="tulajGyorsettermeFK">
 			<xs:selector xpath="Tulaj" />
 			<xs:field xpath="@gyorsetteremFK" />
-		</xs:keyref>
+		</xs:unique>
 	</xs:element>	
 </xs:schema>

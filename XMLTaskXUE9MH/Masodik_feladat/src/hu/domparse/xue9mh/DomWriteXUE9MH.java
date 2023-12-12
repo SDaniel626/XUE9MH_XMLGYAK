@@ -11,12 +11,11 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 
 import org.w3c.dom.Document;
-import org.xml.sax.InputSource;
 
 public class DomWriteXUE9MH {
 	public static void main(String[] args) {
         try {
-            // Beolvasom az xml file tartalmat
+            // Beolvasom az xml file tartalmat és beparsolom a document-be vagyis felepitem a DOM fát
             File inputFile = new File("XML_XUE9MH.xml");
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -26,7 +25,7 @@ public class DomWriteXUE9MH {
             printDocument(document);
 
             // Kiirom a dokumentumot egy uj fajlba
-            File outputFile = new File("XML_XUE9MH1.xml");
+            File outputFile = new File("XML_XUE9MH2.xml");
             writeDocument(document, outputFile);
 
         } catch (Exception e) {
