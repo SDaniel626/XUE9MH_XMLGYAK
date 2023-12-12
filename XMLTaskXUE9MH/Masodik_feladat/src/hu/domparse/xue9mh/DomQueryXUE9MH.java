@@ -21,15 +21,15 @@ public class DomQueryXUE9MH extends DomReadXUE9MH {
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(inputFile);
 			doc.getDocumentElement().normalize();
-			System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-			System.out.println("----------------------------");
 			
-			//Beolvasas
+			//Keresett elem nevenek bekerese
 			Scanner myObj = new Scanner(System.in);
 			System.out.println("Which element would you like to see?");
-			System.out.println("Opciók:Gyros\tGyorsetterem\tRendel\tVasarlo\tBeszallit\tBeszallito\tTulaj\tBankkartya");
+			System.out.println("Opciók:Gyros/Gyorsetterem/Rendel/Vasarlo/Beszallit/Beszallito/Tulaj/Bankkartya");
 			String element = myObj.nextLine(); 
-
+			
+			//Keresett elem osszes peldanyanak kiirasa
+			System.out.println("<" + doc.getDocumentElement().getNodeName() +">");
 			NodeList nList = doc.getElementsByTagName(element);
 			switch(element) {
 			  case "Gyros":
@@ -60,6 +60,7 @@ public class DomQueryXUE9MH extends DomReadXUE9MH {
 				  System.out.println("No such element!");
 			}
 			myObj.close();
+			System.out.println("</" + doc.getDocumentElement().getNodeName() +">");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

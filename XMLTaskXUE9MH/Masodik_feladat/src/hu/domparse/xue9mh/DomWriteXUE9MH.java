@@ -29,8 +29,6 @@ public class DomWriteXUE9MH {
             File outputFile = new File("XML_XUE9MH1.xml");
             writeDocument(document, outputFile);
 
-            System.out.println("XML content written to 'output.xml'.");
-
         } catch (Exception e) {
             e.printStackTrace();
         }

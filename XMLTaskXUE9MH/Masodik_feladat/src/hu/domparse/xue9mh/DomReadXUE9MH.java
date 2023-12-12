@@ -20,46 +20,46 @@ public class DomReadXUE9MH {
 			//xml file megadasa
 			File inputFile = new File("XML_XUE9MH.xml");
 			
-			////Dom-dokumentum letrehozasa az XML dokumentum eleresehez
+			//Dom-fa letrehozasa az XML dokumentum eleresehez
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(inputFile);
 			doc.getDocumentElement().normalize();
-			System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-			System.out.println("----------------------------");
+			System.out.println("<" + doc.getDocumentElement().getNodeName() +">");			
 			
 			//Elemek beolvasasa es listazasa metodusokkal
 			NodeList nList = doc.getElementsByTagName("Gyorsetterem");
 			gyorsetteremRead(nList);
-			System.out.println("----------------------------");
+			
 
 			NodeList nList2 = doc.getElementsByTagName("Gyros");
 			gyrosRead(nList2);
-			System.out.println("----------------------------");
+			
 
 			NodeList nList3 = doc.getElementsByTagName("Rendel");
 			rendelesekRead(nList3);
-			System.out.println("----------------------------");
+			
 
 			NodeList nList4 = doc.getElementsByTagName("Vasarlo");
 			vasarloRead(nList4);
-			System.out.println("----------------------------");
+			
 
 			NodeList nList5 = doc.getElementsByTagName("Bankkartya");
 			bankkartyaRead(nList5);
-			System.out.println("----------------------------");
+			
 
 			NodeList nList6 = doc.getElementsByTagName("Beszallit");
 			beszallitRead(nList6);
-			System.out.println("----------------------------");
+			
 
 			NodeList nList7 = doc.getElementsByTagName("Beszallito");
 			beszallitoRead(nList7);
-			System.out.println("----------------------------");
+			
 			
 			NodeList nList8 = doc.getElementsByTagName("Tulaj");
 			tulajRead(nList8);
-			System.out.println("----------------------------");
+			
+			System.out.println("</" + doc.getDocumentElement().getNodeName() +">");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -68,107 +68,112 @@ public class DomReadXUE9MH {
 	//Metodus a gyerekelemek kiirasara
 	public static void getElement(Element eElement, String elementOut, String elementName) {
 
-		System.out.println(elementOut + " : " + eElement.getElementsByTagName(elementName).item(0).getTextContent());
+		System.out.println("\t\t<"+elementOut + ">" + eElement.getElementsByTagName(elementName).item(0).getTextContent() + "</"+elementOut + ">");
 	}
-	//kiiro metodusok
+	
+	public static void getSubElement(Element eElement, String elementOut, String elementName) {
+
+		System.out.println("\t\t\t<"+elementOut + ">" + eElement.getElementsByTagName(elementName).item(0).getTextContent() + "</"+elementOut + ">");
+	}
+	//beolvaso metodusok
 	
 	public static void gyorsetteremRead(NodeList nList) {
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			Node nNode = nList.item(temp);
-			System.out.println("\nRoot element :" + nNode.getNodeName());
-
+			if(temp==0) {
+				System.out.println("\t<" + nNode.getNodeName() + " id:" + ((Element) nNode).getAttribute("id") + ">");
+			} else {
+				System.out.println("\n\t<" + nNode.getNodeName() + " id:" + ((Element) nNode).getAttribute("id") + ">");
+			}
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
 
-				System.out.println("ID : " + eElement.getAttribute("id"));
 				getElement(eElement, "Nev", "Nev");
 				getElement(eElement, "Email", "Email");
 				getElement(eElement, "Telefonszam", "Telefonszam");
-				getElement(eElement, "Hetkoznap", "Hetkoznap");
-				getElement(eElement, "Hetvege_unnepek", "Hetvege_unnepek");
+				System.out.println("\t\t<Nyitvatartas>");
+				getSubElement(eElement, "Hetkoznap", "Hetkoznap");
+				getSubElement(eElement, "Hetvege_unnepek", "Hetvege_unnepek");
+				System.out.println("\t\t</Nyitvatartas>");
 
 			}
+			System.out.println("\t</" + nNode.getNodeName() + ">");
 		}
 	}
 	public static void gyrosRead(NodeList nList) {
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			Node nNode = nList.item(temp);
-			System.out.println("\nRoot element :" + nNode.getNodeName());
+			System.out.println("\n\t<" + nNode.getNodeName() + " id:" + ((Element) nNode).getAttribute("id") + " gyorsetteremFK:" + ((Element) nNode).getAttribute("gyorsetteremFK") + ">");
 
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
 
-				System.out.println("ID : " + eElement.getAttribute("id"));
-				System.out.println("GyorsetteremFK : " + eElement.getAttribute("gyorsetteremFK"));
 				getElement(eElement, "Suly", "Suly");
 				
 				NodeList toltelekList = eElement.getElementsByTagName("Toltelek");
 				toltelekRead(toltelekList);
 			}
+			System.out.println("\t</" + nNode.getNodeName() + ">");
 		}
 	}	
 	
 	private static void toltelekRead(NodeList toltelekList) {
-        String temp = "Tolelekek: ";
 	    for (int i = 0; i < toltelekList.getLength(); i++) {
 	        Node toltelekNode = toltelekList.item(i);
 	        if (toltelekNode.getNodeType() == Node.ELEMENT_NODE) {
 	            Element toltelekElement = (Element) toltelekNode;
-	            temp += toltelekElement.getTextContent() + ", ";
-	        }
+	            System.out.println("\t\t<Toltelek>" + toltelekElement.getTextContent()+ "</Toltelek>");
+	        }	        
 	    }
-	    temp = temp.substring(0, temp.length()-2);
-	    System.out.println(temp);
 	}
 	
 	public static void rendelesekRead(NodeList nList) {
+		System.out.println("\n\t<Rendelesek>");
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			Node nNode = nList.item(temp);
-			System.out.println("\nRoot element :" + nNode.getNodeName());
 
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
-
-				System.out.println("gyrosFK : " + eElement.getAttribute("gyrosFK"));
-				System.out.println("vasarloFK : " + eElement.getAttribute("vasarloFK"));
+				System.out.println("\t\t<" + nNode.getNodeName() + " gyrosFK : " + eElement.getAttribute("gyrosFK") + " vasarloFK : " + eElement.getAttribute("vasarloFK") + "/>");
 			}
 		}
+		System.out.println("\t</Rendelesek>");
 	}
 	
 	public static void vasarloRead(NodeList nList) {
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			Node nNode = nList.item(temp);
-			System.out.println("\nRoot element :" + nNode.getNodeName());
+			System.out.println("\n\t<" + nNode.getNodeName() + " id:" + ((Element) nNode).getAttribute("id") + ">");
 
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
 
-				System.out.println("ID : " + eElement.getAttribute("id"));
 				getElement(eElement, "Nev", "Nev");
 				getElement(eElement, "Telefonszam", "Telefonszam");
-				getElement(eElement, "Hazszam", "Hazszam");
-				getElement(eElement, "Utca", "Utca");
-				getElement(eElement, "Varos", "Varos");
+				System.out.println("\t\t<Cim>");
+				getSubElement(eElement, "Hazszam", "Hazszam");
+				getSubElement(eElement, "Utca", "Utca");
+				getSubElement(eElement, "Varos", "Varos");
+				System.out.println("\t\t</Cim>");
 
 			}
+			System.out.println("\t</" + nNode.getNodeName() + ">");
 		}
 	}
 	
 	public static void bankkartyaRead(NodeList nList) {
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			Node nNode = nList.item(temp);
-			System.out.println("\nRoot element :" + nNode.getNodeName());
+			System.out.println("\n\t<" + nNode.getNodeName() + " id: " + ((Element) nNode).getAttribute("id") + " vasarloFK : " + ((Element) nNode).getAttribute("vasarloFK") + ">");
 
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
 
-				System.out.println("ID : " + eElement.getAttribute("id"));
 				getElement(eElement, "Kartyaszam", "Kartyaszam");
 				getElement(eElement, "CCV", "CCV");
 				getElement(eElement, "Tipus", "Tipus");
 				getElement(eElement, "Lejarati_datum", "Lejarati_datum");
-				System.out.println("VasarloFK : " + eElement.getAttribute("vasarloFK"));
-
+				System.out.println("\t</" + nNode.getNodeName() + ">");
 			}
 		}
 	}
@@ -176,16 +181,14 @@ public class DomReadXUE9MH {
 	public static void beszallitRead(NodeList nList) {
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			Node nNode = nList.item(temp);
-			System.out.println("\nRoot element :" + nNode.getNodeName());
+			System.out.println("\n\t<" + nNode.getNodeName() + " gyorsetteremFK : " + ((Element) nNode).getAttribute("gyorsetteremFK") + " beszallitoFK : " + ((Element) nNode).getAttribute("beszallitoFK") + ">");
 
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
 
-				System.out.println("GyorsetteremFK : " + eElement.getAttribute("gyorsetteremFK"));
-				System.out.println("BeszallitoFK : " + eElement.getAttribute("beszallitoFK"));
 				getElement(eElement, "Termek", "Termek");
 				getElement(eElement, "Datum", "Datum");
-
+				System.out.println("\t</" + nNode.getNodeName() + ">");
 			}
 		}
 	}
@@ -193,19 +196,20 @@ public class DomReadXUE9MH {
 	public static void beszallitoRead(NodeList nList) {
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			Node nNode = nList.item(temp);
-			System.out.println("\nRoot element :" + nNode.getNodeName());
+			System.out.println("\n\t<" + nNode.getNodeName() + " id:" + ((Element) nNode).getAttribute("id") + ">");
 
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
 
-				System.out.println("ID : " + eElement.getAttribute("id"));
 				getElement(eElement, "Nev", "Nev");
 				getElement(eElement, "Email", "Email");
 				getElement(eElement, "Telefonszam", "Telefonszam");
-				getElement(eElement, "Hazszam", "Hazszam");
-				getElement(eElement, "Utca", "Utca");
-				getElement(eElement, "Varos", "Varos");
-
+				System.out.println("\t\t<Cim>");
+				getSubElement(eElement, "Hazszam", "Hazszam");
+				getSubElement(eElement, "Utca", "Utca");
+				getSubElement(eElement, "Varos", "Varos");
+				System.out.println("\t\t</Cim>");
+				System.out.println("\t</" + nNode.getNodeName() + ">");
 			}
 		}
 	}
@@ -213,20 +217,16 @@ public class DomReadXUE9MH {
 	public static void tulajRead(NodeList nList) {
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			Node nNode = nList.item(temp);
-			System.out.println("\nRoot element :" + nNode.getNodeName());
+			System.out.println("\n\t<" + nNode.getNodeName() + " id:" + ((Element) nNode).getAttribute("id") + " gyorsetteremFK : " + ((Element) nNode).getAttribute("gyorsetteremFK") + ">");
 
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
 
-				System.out.println("ID : " + eElement.getAttribute("id"));
-				System.out.println("GyorsetteremFK : " + eElement.getAttribute("gyorsetteremFK"));
 				getElement(eElement, "Nev", "Nev");
 				getElement(eElement, "Email", "Email");
 				getElement(eElement, "Telefonszam", "Telefonszam");
-
+				System.out.println("\t</" + nNode.getNodeName() + ">");
 			}
 		}
-	}
-	
-	
+	}	
 }
