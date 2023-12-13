@@ -27,7 +27,7 @@ public class DomWriteXUE9MH extends DomReadXUE9MH {
             document.getDocumentElement().normalize();
 			System.out.println("<" + document.getDocumentElement().getNodeName() +">");			
 			
-			//Elemek beolvasasa es listazasa metodusokkal
+			//Elemek beolvasasa es listazasa orokolt metodusokkal
 			NodeList nList = document.getElementsByTagName("Gyorsetterem");
 			gyorsetteremRead(nList);
 			
@@ -68,6 +68,7 @@ public class DomWriteXUE9MH extends DomReadXUE9MH {
             //File outputFile = new File("XML_XUE9MH2.xml");
             //writeDocument(document, outputFile);
             
+			//Elemek kiirasa fajlba metodusokkal
             PrintWriter writer = new PrintWriter(new FileWriter("XML_XUE9MH3.xml"));
             writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
             writer.println("<" + document.getDocumentElement().getNodeName() + " xsi:noNamespaceSchemaLocation=\"XMLSchemaXUE9MH.xsd\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"" +">");
